@@ -13,10 +13,24 @@ pipeline{
             }
         }
 
+    stage("build")
+    {
+      steps{withAnt(installation: 'Home_ant', jdk: 'HOME_JAVA') {
+    sh 'ant build'
+}}
+    }
+
     stage("test")
     {
       steps{withAnt(installation: 'Home_ant', jdk: 'HOME_JAVA') {
-    sh 'ant -f build.xml -v'
+    sh 'ant test'
+}}
+    }
+
+    stage("deploy")
+    {
+      steps{withAnt(installation: 'Home_ant', jdk: 'HOME_JAVA') {
+    sh 'ant deploy'
 }}
     }
     
