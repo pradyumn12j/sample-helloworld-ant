@@ -4,7 +4,7 @@ pipeline{
   {
     stage("git")
     {
-      steps{git 'https://github.com/pradyumn12j/ant.git'}
+      steps{git 'https://github.com/pradyumn12j/sample-helloworld-ant.git'}
     }
 
     stage('Verify Workspace') {
