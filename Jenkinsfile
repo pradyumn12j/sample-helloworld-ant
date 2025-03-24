@@ -30,7 +30,7 @@ pipeline{
     stage("deploy")
     {
       steps{withAnt(installation: 'Home_ant', jdk: 'HOME_JAVA') {
-    sh 'ant deploy'
+    sh 'ant deploy -v'
 }}
     }
     
