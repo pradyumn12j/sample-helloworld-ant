@@ -7,6 +7,12 @@ pipeline{
       steps{git 'https://github.com/pradyumn12j/ant.git'}
     }
 
+    stage('Verify Workspace') {
+            steps {
+                sh 'ls -l'  // List files in the workspace to verify if build.xml exists
+            }
+        }
+
     stage("test")
     {
       steps{withAnt(installation: 'Home_ant', jdk: 'HOME_JAVA') {
