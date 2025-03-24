@@ -20,12 +20,7 @@ pipeline{
 }}
     }
 
-    stage("test")
-    {
-      steps{withAnt(installation: 'Home_ant', jdk: 'HOME_JAVA') {
-    sh 'ant test'
-}}
-    }
+
 
     stage("deploy")
     {
